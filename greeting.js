@@ -3,14 +3,14 @@ const form = document.querySelector(".js-form"),
 const greetingBox = document.querySelector(".js-greetingBox"),
     greetingText = greetingBox.querySelector(".js-greeting"),
     greetingButton = greetingBox.querySelector("input[type='button']");
-
+const todoBox_gr = document.querySelector(".js-todoBox");
 
 const USER_LS = "username",
-    SHOWING_CN = "showing";
+    SHOWING_CN = "showing-block";
 
 
 function handleSubmit(event) {
-    event.preventDefault();
+    //event.preventDefault();
     const changingName = nameInput.value;
     localStorage.setItem(USER_LS, changingName);
     loadName();
@@ -32,10 +32,11 @@ function loadName() {
     const currentName = localStorage.getItem(USER_LS);
     if(currentName === "" || currentName === null) {
         askName();
+        todoBox_gr.classList.remove(SHOWING_CN);
     } else {
         displayGreeting(currentName);
+        todoBox_gr.classList.add(SHOWING_CN);
     }
-    loadTodo();
 }
 
 function changeUsername() {
@@ -44,7 +45,7 @@ function changeUsername() {
 }
 
 function init() {
-    greetingButton.addEventListener("click", changeUsername);
+    //greetingButton.addEventListener("click", changeUsername);
     loadName();
 }
 

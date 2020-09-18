@@ -5,28 +5,51 @@
     <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <!-- <h1 id="title" class="btn">This work!</h1> -->
     <div class="container">
-        <div class="js-clock">
-            <h1>00:00:00</h1>
-        </div>
-        <form class="js-form form">
-            <input type="text" placeholder="What is your name?" />
-        </form>
-        <div class="js-greetingBox greeting">
-            <span class="js-greeting"></span>
-            <input type="button" value="change" />
-        </div>
-        <div class="js-todoBox">
-            <form class="js-todoForm form">
-                <input type="text" placeholder="Write today's TO DO" />
+        <div class="main-container">
+            <div class="js-clock">
+                <h1 id="clock-txt">00:00:00</h1>
+            </div>
+            <form class="js-form form">
+                <input type="text" placeholder="What is your name?" />
             </form>
-            <ul class="js-todoList list">
-            </ul>
+            <div class="js-greetingBox greeting">
+                <span class="js-greeting"></span>
+                <span> Wish your today to be perfect :)</span>
+                <!-- <input type="button" value="change" /> -->
+            </div>
+        </div>
+
+        <div class="detail-container">
+            <div class="js-todoBox box">
+                <h4>Today's TODO</h4>
+                <form class="js-todoForm form">
+                    <input type="text" placeholder="Write today's TO DO" >
+                </form>
+                <ul class="js-todoList list">
+                </ul>
+                <input class="js-crBtn btn" type="button" value="add new" >
+                <input class="js-delBtn btn" type="button" value="del checked" >
+            </div>
+            <div class="js-fortuneBox box">
+                <h4>Today's Fortune</h4>
+                <form class="js-fortuneForm">
+                    <span>PLEASE WRITE YOUR BIRTH</span>
+                    <div>
+                        Year : <select id="year" onchange="calculateLastday()"></select>
+                        Month : <select id="month" onchange="calculateLastday()"></select> 
+                        Day : <select id="day"></select><br>
+                    </div>
+                    <input type="button" value="SHOW!">
+                </form>
+            </div>
         </div>
     </div>
+    <!-- <h1 id="title" class="btn">This work!</h1> -->
     <script src="clock.js"></script>
     <script src="greeting.js"></script>
     <script src="todo.js"></script>
+    <script src="fortune.js"></script>
+    <script src="bgImg.js"></script>
 </body>
 </html>
