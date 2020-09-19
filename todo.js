@@ -15,7 +15,6 @@ function cleanArr(arr) {
     return arr;
 }
 
-
 function deleteChecked() {
     const todoLis = todoList.children;
     if(todoLis.length === 0) return;
@@ -28,6 +27,7 @@ function deleteChecked() {
         //console.log(`${idx} start: ${li.children[1].textContent}`);
         if(li.children[0].checked) {
             todoList.removeChild(li);
+            //console.log(`DEL idx: ${li.id}`);
             for(var i = 0; i < todoArr.length; i++) {
                 if(todoArr[i].id.toString() === li.id) {
                     todoArr.splice(i, 1);
@@ -72,10 +72,10 @@ function handleTodoSubmit(event) {
     };
     todoArr.push(newTodo);
     localStorage.setItem(TODO_LS, JSON.stringify(todoArr));
-    displaySingleTodo(newTodo.value, todoArr.length);
+    displaySingleTodo(newTodo.value, newTodo.id);
 }
 
-function askTodo(isFirstTime) {
+function askTodo() {
     todoForm.classList.add(SHOWING_CN);
     todoList.classList.remove(SHOWING_CN);
     createBtn.classList.remove(SHOWING_CN_INLINE);

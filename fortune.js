@@ -2,7 +2,8 @@ const fortuneBox = document.querySelector(".js-fortuneBox"),
     fortuneForm = document.querySelector(".js-fortuneForm"),
     year = fortuneForm.querySelector("#year"),
     month = fortuneForm.querySelector("#month"),
-    day = fortuneForm.querySelector("#day");
+    day = fortuneForm.querySelector("#day"),
+    showBtn = fortuneForm.querySelector("input[type='button']");
 
 const SHOWING_CN_FLEX = "showing-flex";
 
@@ -53,8 +54,13 @@ function loadFortune() {
 }
 
 
+function notyetFn() {
+    alert("NOT YET!");
+}
+
 function init() {
     loadFortune();
+    showBtn.addEventListener("click", notyetFn);
 }
 
 init();

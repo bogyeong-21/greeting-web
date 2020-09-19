@@ -120,14 +120,17 @@ body {
 
 .showing-flex {
     display: flex;
+    animation: fadeIn .3s linear;
 }
 
 .showing-block {
     display: block;
+    animation: fadeIn .3s linear;
 }
 
 .showing-inline {
     display: inline;
+    animation: fadeIn .3s linear;
 }
 
 @keyframes fadeIn {
